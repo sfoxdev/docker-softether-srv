@@ -14,3 +14,7 @@ SoftEther VPN ("SoftEther" means "Software Ethernet") is one of the world's most
 ```
 docker run -d --cap-add NET_ADMIN -p 443:443/tcp -p 992:992/tcp -p 1194:1194/udp -p 5555:5555/tcp --name vpn-srv sfoxdev/softether-srv
 ```
+
+```
+docker run -d --privileged --net host -v /srv/vpnserver/config:/etc/vpnserver:Z -v /srv/vpnserver/logs:/var/log/vpnserver:Z --cap-add NET_ADMIN -p 443:443/tcp -p 992:992/tcp -p 1194:1194/udp -p 5555:5555/tcp --name vpn-srv sfoxdev/softether-srv
+```
