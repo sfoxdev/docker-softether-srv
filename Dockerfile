@@ -23,10 +23,10 @@ RUN set -ex ; \
     mkdir -p /var/log/vpnserver/security_log; ln -s /var/log/vpnserver/security_log /usr/vpnserver/security_log ; \
     mkdir -p /var/log/vpnserver/packet_log; ln -s /var/log/vpnserver/packet_log /usr/vpnserver/packet_log ; \
     chown -R softether:softether /usr/vpnserver ; \
-    setcap 'cap_net_bind_service=+ep' /usr/vpnserver/vpnserver ; \
 
     apk del .build-deps ; \
     apk add --no-cache --virtual .run-deps libcap libcrypto1.0 libssl1.0 ncurses-libs readline su-exec ; \
+    setcap 'cap_net_bind_service=+ep' /usr/vpnserver/vpnserver ; \
 
     cd .. ; \
     rm -rf /usr/vpnbridge /usr/bin/vpnbridge /usr/vpnclient /usr/bin/vpnclient /usr/vpncmd /usr/bin/vpncmd /usr/bin/vpnserver \
