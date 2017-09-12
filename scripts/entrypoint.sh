@@ -18,7 +18,8 @@ if [ "x$1" = 'x/usr/vpnserver/vpnserver' ]; then
 
     # Starting
     echo "Starting SoftEther VPN Server"
-    exec su-exec softether sh -c "`echo $@`"
+    #exec su-exec softether sh -c "`echo $@`"
+    exec sh -c "`echo $@`"
 else
     exec "$@"
 fi
